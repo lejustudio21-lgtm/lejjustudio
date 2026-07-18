@@ -1,0 +1,34 @@
+{
+  "name": "RastafariArticle",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "section": {
+      "type": "string",
+      "enum": [
+        "historia",
+        "cultura_etiope",
+        "uruguay"
+      ]
+    },
+    "content": {
+      "type": "string"
+    },
+    "cover_image": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "section"
+  ]
+}

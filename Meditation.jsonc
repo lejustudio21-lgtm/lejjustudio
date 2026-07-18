@@ -1,0 +1,54 @@
+{
+  "name": "Meditation",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "adultos",
+        "adolescentes"
+      ]
+    },
+    "subcategory": {
+      "type": "string",
+      "enum": [
+        "sanar",
+        "transurfing",
+        "manifestacion",
+        "pnl",
+        "general"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "audio_url": {
+      "type": "string"
+    },
+    "cover_image": {
+      "type": "string"
+    },
+    "is_premium": {
+      "type": "boolean",
+      "default": false
+    },
+    "price": {
+      "type": "number",
+      "default": 0
+    },
+    "duration_minutes": {
+      "type": "number"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "category"
+  ]
+}

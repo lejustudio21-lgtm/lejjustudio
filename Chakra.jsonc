@@ -1,0 +1,53 @@
+{
+  "name": "Chakra",
+  "type": "object",
+  "properties": {
+    "day_of_week": {
+      "type": "string",
+      "enum": [
+        "Lunes",
+        "Martes",
+        "Mi\u00e9rcoles",
+        "Jueves",
+        "Viernes",
+        "S\u00e1bado",
+        "Domingo"
+      ]
+    },
+    "name_sanskrit": {
+      "type": "string"
+    },
+    "name_common": {
+      "type": "string"
+    },
+    "frequency_hz": {
+      "type": "number"
+    },
+    "mantra_bija": {
+      "type": "string"
+    },
+    "color_hex": {
+      "type": "string"
+    },
+    "benefits": {
+      "type": "string"
+    },
+    "sacred_symbol": {
+      "type": "string"
+    },
+    "ritual": {
+      "type": "string"
+    },
+    "audio_url": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "required": [
+    "name_sanskrit",
+    "day_of_week"
+  ]
+}

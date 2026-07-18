@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@layer base {
+  :root {
+    /* LEJJU Design System — Carbon & Chrome */
+    --background: 240 6% 5%;
+    --foreground: 220 14% 88%;
+    --card: 240 6% 8%;
+    --card-foreground: 220 14% 88%;
+    --popover: 240 6% 6%;
+    --popover-foreground: 220 14% 88%;
+    --primary: 42 55% 82%;
+    --primary-foreground: 240 6% 5%;
+    --secondary: 240 6% 11%;
+    --secondary-foreground: 220 14% 88%;
+    --muted: 240 6% 11%;
+    --muted-foreground: 220 10% 52%;
+    --accent: 42 50% 78%;
+    --accent-foreground: 240 6% 5%;
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 220 14% 88%;
+    --border: 240 6% 14%;
+    --input: 240 6% 14%;
+    --ring: 42 50% 78%;
+    --radius: 0.625rem;
+    --font-heading: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Lora', Georgia, serif;
+    --font-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background: hsl(42 50% 78% / 0.3);
+    color: hsl(42 55% 92%);
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: hsl(240 6% 5%); }
+  ::-webkit-scrollbar-thumb { background: hsl(240 6% 18%); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(240 6% 24%); }
+}
+
+@layer utilities {
+  .text-gold { color: hsl(42 55% 82%); }
+  .text-silver { color: hsl(220 14% 88%); }
+  .text-muted-silver { color: hsl(220 10% 52%); }
+  .bg-carbon { background-color: hsl(240 6% 5%); }
+  .bg-card-dark { background-color: hsl(240 6% 8%); }
+  .border-carbon { border-color: hsl(240 6% 14%); }
+
+  .glow-gold {
+    box-shadow: 0 0 40px -10px hsl(42 55% 82% / 0.4), 0 0 80px -30px hsl(42 55% 82% / 0.2);
+  }
+  .glow-soft {
+    box-shadow: 0 0 60px -20px hsl(42 50% 78% / 0.15);
+  }
+  .text-glow-gold {
+    text-shadow: 0 0 30px hsl(42 55% 82% / 0.3);
+  }
+
+  .gradient-radial-gold {
+    background: radial-gradient(circle at 50% 50%, hsl(42 50% 78% / 0.08) 0%, transparent 60%);
+  }
+  .gradient-carbon {
+    background: linear-gradient(180deg, hsl(240 6% 5%) 0%, hsl(240 6% 3%) 100%);
+  }
+
+  .glass-card {
+    background: hsl(240 6% 8% / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(240 6% 14% / 0.8);
+  }
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glass-card-hover:hover {
+    border-color: hsl(42 50% 78% / 0.3);
+    box-shadow: 0 0 40px -15px hsl(42 50% 78% / 0.2);
+    transform: translateY(-2px);
+  }
+
+  .capsule-nav {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .capsule-nav:hover {
+    color: hsl(42 55% 82%);
+  }
+  .capsule-nav.active {
+    color: hsl(42 55% 82%);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent 0%, hsl(42 50% 78% / 0.1) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; filter: blur(40px); }
+  50% { opacity: 0.8; filter: blur(50px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
