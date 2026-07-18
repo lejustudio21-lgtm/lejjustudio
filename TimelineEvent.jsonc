@@ -1,0 +1,33 @@
+{
+  "name": "TimelineEvent",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "origen",
+        "haile_selassie",
+        "marcus_garvey",
+        "cultura",
+        "uruguay"
+      ]
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "title"
+  ]
+}

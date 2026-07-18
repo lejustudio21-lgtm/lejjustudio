@@ -1,0 +1,58 @@
+{
+  "name": "ServiceRequest",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "service_type": {
+      "type": "string",
+      "enum": [
+        "numerologia",
+        "ritual"
+      ]
+    },
+    "form_data": {
+      "type": "object",
+      "properties": {
+        "full_name": {
+          "type": "string"
+        },
+        "birth_date": {
+          "type": "string"
+        },
+        "intention": {
+          "type": "string"
+        }
+      }
+    },
+    "price": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendiente",
+        "entregado"
+      ],
+      "default": "pendiente"
+    },
+    "result": {
+      "type": "string"
+    },
+    "delivered_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "service_type"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "user"
+      ],
+      "default": "user"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "es",
+        "en"
+      ],
+      "default": "es"
+    },
+    "sovereignty_signed_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "birth_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "avatar_url": {
+      "type": "string"
+    }
+  }
+}

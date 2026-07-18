@@ -1,0 +1,30 @@
+{
+  "name": "WeeklyTopic",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "context": {
+      "type": "string"
+    },
+    "week_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "summary": {
+      "type": "string"
+    },
+    "is_archived": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title"
+  ]
+}
